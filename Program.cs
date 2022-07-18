@@ -1,39 +1,36 @@
 ﻿using System;
 
-namespace Фибоначчи
+namespace algoritmi1
 {
     class Program
     {
-        static void fibonachchiRecursiya(int x, int y)
-        {
-            if (y > 400)
-            {
-                return;
-            }
-            int z = x + y;
-            x = y;
-            y = z;
-            Console.WriteLine(z);
-            fibonachchiRecursiya(x,y);
-        }
-
-        static void fibonachchiCycle(int en)
-        {
-            int x = 0;
-            int y = 1;
-            for (int h = 0; h < en;h++)
-            {
-                int z = x + y;
-                x = y;
-                y = z;
-                Console.WriteLine(z);
-            }
-        }
-
         static void Main(string[] args)
         {
-            fibonachchiCycle(5);
+            int number = Convert.ToInt32(Console.ReadLine());
+            IsSimpleSilo(number);
         }
+        static void IsSimpleSilo(int number)
+        {
+            int d = 0;
+            int i = 2;
+            while (i < number)
+            {
+                if (number % i == 0)
+                {
+                    d++;
+                    i++;
+                }
+                if (d == 0)
+                {
+                    Console.WriteLine("Число простое");
+                }
+                else
+                {
+                    Console.WriteLine("Число не простое");
+                }
 
+            }
+            
+        }
     }
 }
